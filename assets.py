@@ -14,9 +14,6 @@ RIVER_SOUND ='river_sound'
 WIN_SOUND = 'win_sound'
 
 
-
-
-
 def load_assets():
     assets = {}
     assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR,'6206152.jpg')).convert()
@@ -28,7 +25,8 @@ def load_assets():
 # Carrega os sons do jogo
     pygame.mixer.music.load(os.path.join(SND_DIR, ''))
     pygame.mixer.music.set_volume(0.4)
-    assets[DJ_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'expl3.wav'))
-    assets[RIVER_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'expl6.wav'))
-    assets[WIN_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'pew.wav'))
+    assets[DJ_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'dj_caionoveli sound.m4a'))
+    assets[RIVER_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'river sound.mp3'))
+    assets[WIN_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'win sound.mp3'))
+    assets[CROCO_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'crocodile sound.mp3'))
     return assets
