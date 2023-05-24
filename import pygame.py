@@ -44,7 +44,7 @@ BACKGROUND_WIDTH = 800
 BACKGROUND_HEIGHT = 600
 
 assets={}
-assets['background'] = pygame.image.load('assets/img/6206152.jpg').convert()
+assets['background'] = pygame.image.load('assets/img/img/6206152.jpg').convert()
 assets['pessoa_img'] = pygame.transform.scale(assets['6206152.jpg'], (BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
 assets['crocodilo_img'] = pygame.image.load('assets/img/crocodilo jogo da velha.jpg').convert_alpha()
 assets['crocodilo_img'] = pygame.transform.scale(assets['crocodilo jogo da velha.jpg'], (CROCODILO_WIDTH,CROCODILO_HEIGHT))
