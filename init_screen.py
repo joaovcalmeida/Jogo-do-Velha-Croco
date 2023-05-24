@@ -10,13 +10,13 @@ from assets import *
 
 def init_screen(window):
 
-
+    all_buttons = pygame.sprite.Group()
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
     assets = load_assets()
 
     play = Botao(assets, 'Play')
-
+    all_buttons.add(play)
     # ----- Inicia estruturas de dados
     game = True
 
@@ -25,7 +25,7 @@ def init_screen(window):
     fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
 
     titulo1 = fonte_t1.render('Jogo da Velha', True, (255, 255, 255))
-    titulo2 = fonte_t2.render('Distribuição CrocoRichards aaaa', True, (255, 255, 255))
+    titulo2 = fonte_t2.render('Distribuição CrocoRichards', True, (255, 255, 255))
 
     # ===== Loop principal =====
     while game:
@@ -59,6 +59,7 @@ def init_screen(window):
         window.blit(titulo1, (100, 110))
         window.blit(titulo2, (180, 165))
         window.blit(play.image, play.rect)
+        all_buttons.draw(window)
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
         
