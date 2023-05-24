@@ -1,4 +1,6 @@
 import pygame
+from config import * 
+from assets import *
 
 class Botao(pygame.sprite.Sprite):
     def __init__(self, assets, nome_do_jogo):
@@ -6,7 +8,7 @@ class Botao(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
 
         self.assets = assets
-        self.image = assets['play inicial.png'] # assets é um dicionário de imagens, sons e fonts 
+        self.image = assets['play_inicial_img']# assets é um dicionário de imagens, sons e fonts 
         self.mask = pygame.mask.from_surface(self.image)
         #todo objeto precisa de um rect
         # rect é a representação de retangulo feita pelo pygame
@@ -21,6 +23,6 @@ class Botao(pygame.sprite.Sprite):
         # Toda a lógica de movimentação deve ser feita aqui
         # Atualização da posição da nave
         if over:
-            self.image = self.assets['btn_hover']
+            self.image = self.assets['play_inicial_selecionada_img']
         else:
-            self.image = self.assets['btn']
+            self.image = self.assets['play_inicial_img']
