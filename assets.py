@@ -20,10 +20,10 @@ WIN_SOUND = 'win_sound'
 def load_assets():
     assets = {}
     assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR,'6206152.jpg')).convert()
-    assets[CROCO_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'crocodilo jogo da velha.png')).convert_alpha()
-    assets[PESSOA_IMG] = pygame.image.load(os.path.join(IMG_DIR,'imagem pessoa.png')).convert_alpha()
-    assets[PLAY_INICIAL_IMG] = pygame.image.load(os.path.join(IMG_DIR,'play inicial.png')).convert_alpha()
-    assets[PLAY_INICIAL_SELECIONADA_IMG] = pygame.image.load(os.path.join(IMG_DIR,'play inicial mais clara.png')).convert_alpha()
+    assets[CROCO_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'crocodilo_jogo_da_velha.jpg')).convert_alpha()
+    assets[PESSOA_IMG] = pygame.image.load(os.path.join(IMG_DIR,'imagem_pessoa1.png')).convert_alpha()
+    assets[PLAY_INICIAL_IMG] = pygame.image.load(os.path.join(IMG_DIR,'play_inicial.png')).convert_alpha()
+    assets[PLAY_INICIAL_SELECIONADA_IMG] = pygame.image.load(os.path.join(IMG_DIR,'play_inicial_mais_clara.png')).convert_alpha()
 
 # Carrega os sons do jogo
     pygame.mixer.music.load(os.path.join(SND_DIR, ''))
