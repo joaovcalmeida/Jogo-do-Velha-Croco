@@ -1,11 +1,12 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
 import pygame
+from config import *
 
 pygame.init()
 
 # ----- Gera tela principal
-window = pygame.display.set_mode((800, 600))
+window = pygame.display.set_mode((LARGURA, ALTURA))
 pygame.display.set_caption('Jogo da velha')
 
 #Cores
