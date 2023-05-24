@@ -31,13 +31,13 @@ while game:
     for event in pygame.event.get():
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
-            game = False
+            game = False     
 
     # ----- Gera saídas
     window.fill(cor_verde)  # Preenche com a cor verde
     window.blit(titulo1, (100, 110))
     window.blit(titulo2, (180, 165))
-
+    
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
 
