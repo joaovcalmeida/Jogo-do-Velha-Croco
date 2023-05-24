@@ -9,29 +9,23 @@ from assets import *
 #window = pygame.display.set_mode((LARGURA, ALTURA))
 
 def init_screen(window):
-    pygame.init()
+
 
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
     assets = load_assets()
 
-    btn = Botao(assets,'')
-
-    # ----- Gera tela principal
-    pygame.display.set_caption('Jogo da velha')
-
-    medidas_botao = Botao(assets, '')
+    play = Botao(assets, 'Play')
 
     # ----- Inicia estruturas de dados
     game = True
-
 
     # ----- Inicia assets
     fonte_t1 = pygame.font.SysFont("goudystout", 42)
     fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
 
     titulo1 = fonte_t1.render('Jogo da Velha', True, (255, 255, 255))
-    titulo2 = fonte_t2.render('Distribuição CrocoRichards', True, (255, 255, 255))
+    titulo2 = fonte_t2.render('Distribuição CrocoRichards aaaa', True, (255, 255, 255))
 
     # ===== Loop principal =====
     while game:
@@ -55,15 +49,16 @@ def init_screen(window):
 
             if event.type == pygame.MOUSEMOTION:
                     #Alterando cor do botão
-                    if btn.rect.collidepoint(event.pos):
-                        btn.mouse_over(True)
+                    if play.rect.collidepoint(event.pos):
+                        play.mouse_over(True)
                     else:
-                        btn.mouse_over(False)
+                        play.mouse_over(False)
 
         # ----- Gera saídas
         window.fill(GREEN)  # Preenche com a cor verde
         window.blit(titulo1, (100, 110))
         window.blit(titulo2, (180, 165))
+        window.blit(play.image, play.rect)
         # ----- Atualiza estado do jogo
         pygame.display.update()  # Mostra o novo frame para o jogador
         
