@@ -37,15 +37,16 @@ def init_screen(window):
             if event.type == pygame.QUIT:
                 game = False
                 state = QUIT
-                running = False
+                game = False
 
             if event.type == pygame.KEYUP:
                     state = GAME
-                    running = False
+                    game = False
                 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                    state = GAME
-                    running = False
+                    if play.rect.collidepoint(event.pos):
+                        state = GAME
+                        game = False
 
             if event.type == pygame.MOUSEMOTION:
                     #Alterando cor do botão
