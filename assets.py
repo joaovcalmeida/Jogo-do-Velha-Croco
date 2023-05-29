@@ -27,7 +27,7 @@ def load_assets():
     #pygame.mixer.music.load(os.path.join(SND_DIR, ''))
     #pygame.mixer.music.set_volume(0.4)
     assets[DJ_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'dj_caionoveli-sound.ogg'))
-    assets[RIVER_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'river sound.mp3'))
+    assets[RIVER_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'river-sound.ogg'))
     assets[WIN_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'win-sound.ogg'))
     assets[CROCO_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'crocodile-sound.ogg'))
     return assets
