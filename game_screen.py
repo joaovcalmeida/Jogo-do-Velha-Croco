@@ -74,6 +74,9 @@ def game():
 
                 x_mouse = event.pos[0]
                 y_mouse = event.pos[1]
+
+                if 700<=x_mouse<= 900 and 100<=y_mouse<=165:
+                     return GAME
                 # Criando o jogador1 na posição x = 10 y = 10
             
                 #pygame.draw.line(window, BLACK,(205,0),(205,600),10)
@@ -227,6 +230,13 @@ def game():
             jogando = False
         restart_button(window)
         restart_game(board_array,click_posicao_x,click_posicao_y,end_game,click_on_off)
+
+        if jogando == False:
+            vencedor = verifica_jogo_da_velha(board_array)
+            print(vencedor)
+
+        elif lista == [False] * 9:
+             print('empate')
 
         #Clique último status
 

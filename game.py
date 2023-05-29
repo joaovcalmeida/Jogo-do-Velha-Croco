@@ -130,6 +130,35 @@ def restart_game(board_array,x,y,end_game,click_on_off):
                            ['n', 'n', 'n']]
             end_game = 0
     return board_array, end_game
+
+def verifica_jogo_da_velha(lista):
+    X = ['x','x','x']
+    O = ['o','o','o']
+    d = []
+    c1 = []
+    c2 = []
+    c3 = []
+    d2 = []
+    for i in range (len(lista)):
+        d.append(lista[i][i])
+        c1.append(lista[i][0])
+        c2.append(lista[i][1])
+        c3.append(lista[i][2])
+        if lista[i] == X:
+            return 'Croco Venceu'
+        if lista[i] == O:
+            return 'DJ Novelli Venceu'
+    d2.append(lista[0][2])
+    d2.append(lista[1][1])
+    d2.append(lista[2][0])
+    if d == X or c1== X or c2== X or c3== X or d2==X:
+        return 'Croco Venceu'
+    if d == O or c1== O or c2== O or c3== O or d2 ==O:
+        return 'DJ Novelli Venceu'
+    else:
+        return 'Deu Velha'
+
+
             
 
 
