@@ -10,8 +10,8 @@ from assets import *
 
 
 # Initializing window
-window = pygame.display.set_mode((1000, 600))
-window.fill(WHITE)
+# window = pygame.display.set_mode((1000, 600))
+# window.fill(WHITE)
 
 
 board_array = [['n', 'n', 'n'],
@@ -54,15 +54,15 @@ def logica_click(click,mouse,click_on_off,click_ult_status,x,y):
     return click_on_off,click_ult_status,x,y
 
 
-def draw_celula(window,board_array):
-    for n in range(3):
-        for nn in range(3):
-            if board_array[nn][n] == 'x':
-                jogador_x(window,n,nn)
-            elif board_array [nn][n] == "o":
-                jogador_o(window,n,nn)
-            else: 
-                pass
+# def draw_celula(window,board_array):
+#     for n in range(3):
+#         for nn in range(3):
+#             if board_array[nn][n] == 'x':
+#                 jogador_x(window,n,nn)
+#             elif board_array [nn][n] == "o":
+#                 jogador_o(window,n,nn)
+#             else: 
+#                 pass
 
 def board_array_data(board_array,X_or_O_turn, end_game,x,y):
     if x<3 and y<3:
