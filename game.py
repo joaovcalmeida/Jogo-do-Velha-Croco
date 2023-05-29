@@ -38,12 +38,12 @@ def tabuleiro_jogo(window):
     pygame.draw.line(window, BLACK,(0,190),(550,190),10)
     pygame.draw.line(window, BLACK,(0,390),(550,390),10)
 
-def logica_clique(click_on_off,click_ult_status,x,y):
-    if clique[0] == 0 and click_ult_status == 1:
+def logica_click(click_on_off,click_ult_status,x,y):
+    if click[0] == 0 and click_ult_status == 1:
         click_on_off = 1
         x = (math.ceil(mouse[0]/200) - 1)
         y = (math.ceil(mouse[1]/200) - 1)
-    if clique[0] == 0 and click_ult_status == 0:
+    if click[0] == 0 and click_ult_status == 0:
         click_on_off = 0
         x = -1
         y = -1
@@ -126,26 +126,27 @@ while game:
         if event.type == pygame.QUIT:
             game = False  
     
-    tabuleiro_jogo(window)
-    click_on_off,click_ult_status,click_posicao_x,click_posicao_y = logica_clique(click_on_off,click_ult_status,click_posicao_x,click_posicao_y)
-    draw_celula(window,board_array)
-    board_array,X_or_o_turn = board_array_data(board_array,X_or_o_turn, end_game,click_posicao_x,click_posicao_y)
-    end_game, X_or_O_turn = win_line(window,board_array,end_game,X_or_O_turn)
-    restart_button(window)
-
     #Variável posição do Mouse
     mouse = pygame.mouse.get_pos()
     mouse_position_x = mouse[0]
     mouse_position_y = mouse[1]
-
-
+    
+    
     #Variável clique do Mouse
-    clique = pygame.mouse.get_pressed()
+    click = pygame.mouse.get_pressed()
+    print(click)
 
+    #Jogo
+    tabuleiro_jogo(window)
+    click_on_off,click_ult_status,click_posicao_x,click_posicao_y = logica_click(click_on_off,click_ult_status,click_posicao_x,click_posicao_y)
+    draw_celula(window,board_array)
+    board_array,X_or_O_turn = board_array_data(board_array,X_or_O_turn, end_game,click_posicao_x,click_posicao_y)
+    end_game, X_or_O_turn = win_line(window,board_array,end_game,X_or_O_turn)
+    restart_button(window)
 
     #Clique último status
 
-    if clique[0] == 1:
+    if click[0] == 1:
         click_ult_status = 1 
     else:
         click_ult_status = 0 
