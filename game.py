@@ -122,6 +122,16 @@ def restart_button(window):
     texto = fonte_t3.render('Restart', 1, BLACK)
     window.blit(texto,(745,110))
 
+def restart_game(board_array,x,y,end_game,click_om_off):
+    if click_on_off == 1 and end_game == 1:
+        if x >= 700 and x <= 900 and y >= 100 and y<=165:
+            board_array = [['n', 'n', 'n'],
+                           ['n', 'n', 'n'],
+                           ['n', 'n', 'n']]
+            end_game = 0
+    return board_array, end_game
+            
+
 
 
 
