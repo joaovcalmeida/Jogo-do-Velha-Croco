@@ -17,7 +17,7 @@ WIN_SOUND = 'win_sound'
 def load_assets():
     assets = {}
     assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR,'6206152.jpg')).convert()
-    assets[CROCO_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'crocodilo_jogo_da_velha.jpg')).convert_alpha()
+    assets[CROCO_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'crocodilo_jogo_da_velha.png')).convert_alpha()
     assets[CROCO_IMG] = pygame.transform.scale(assets[CROCO_IMG], (190, 190))
     assets[PESSOA_IMG] = pygame.image.load(os.path.join(IMG_DIR,'imagem_pessoa1.png')).convert_alpha()
     assets[PESSOA_IMG] = pygame.transform.scale(assets[PESSOA_IMG], (190, 190))
