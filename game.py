@@ -24,6 +24,7 @@ fonte_t1 = pygame.font.SysFont("goudystout", 42)
 fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
 fonte_t3 = pygame.font.SysFont("Comic Sans MS", 30)
 
+
 #Variavéis Click
 
 click_ult_status = 0 

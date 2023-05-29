@@ -4,11 +4,36 @@ from config import *
 from assets import *
 from game import *
 
+class Jogador1(pygame.sprite.Sprite):
+   def __init__(self, img, x, y):
+       # Construtor da classe mãe (Sprite).
+       pygame.sprite.Sprite.__init__(self)
+
+       self.image = img
+       self.rect = self.image.get_rect()
+       self.rect.x = x
+       self.rect.y = y
+
+class Jogador2(pygame.sprite.Sprite):
+   def __init__(self, img, x, y):
+       # Construtor da classe mãe (Sprite).
+       pygame.sprite.Sprite.__init__(self)
+
+       self.image = img
+       self.rect = self.image.get_rect()
+       self.rect.x = x
+       self.rect.y = y
+
 
 def game():
     print("entrou no game screen")
+    assets = load_assets()
     window = pygame.display.set_mode((1000, 600))
     window.fill(WHITE)
+
+    #inicializando assets
+    background = pygame.image.load('assets/img/6206152.jpg').convert()
+    background = pygame.transform.scale(background,(1000,600))
 
 
     board_array = [['n', 'n', 'n'],
@@ -21,6 +46,8 @@ def game():
     fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
     fonte_t3 = pygame.font.SysFont("Comic Sans MS", 30)
 
+    all_sprites = pygame.sprite.Group()
+
     #Variavéis Click
 
     click_ult_status = 0 
@@ -30,7 +57,7 @@ def game():
     X_or_O_turn = 'x' # X ou O
     end_game = 0 
 
-    
+    window.blit(background,(0,0))
     while True:
         # ----- Trata eventos
         for event in pygame.event.get():
@@ -39,6 +66,20 @@ def game():
                 return QUIT
                 pygame.quit()
                 quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+
+                x_mouse = event.pos[0]
+                y_mouse = event.pos[1]
+                # Criando o jogador1 na posição x = 10 y = 10
+               
+                #pygame.draw.line(window, BLACK,(205,0),(205,600),10)
+                if x_mouse < 205 and y_mouse < 205:
+                    x = 0
+                    y = 0
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    all_sprites.add(jogador1)
+                    print("clicou")
+                
         
         #Variável posição do Mouse
         mouse = pygame.mouse.get_pos()
@@ -64,4 +105,6 @@ def game():
         else:
             click_ult_status = 0 
 
+        #desenhando o jogador1
+        all_sprites.draw(window)
         pygame.display.update()
