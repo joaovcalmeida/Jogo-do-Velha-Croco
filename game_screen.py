@@ -226,6 +226,7 @@ def game():
         if end_game == 1:
             jogando = False 
         restart_button(window)
+        restart_game(board_array,click_posicao_x,click_posicao_y,end_game,click_on_off)
 
         #Clique último status
 
