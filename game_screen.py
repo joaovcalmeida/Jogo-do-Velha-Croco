@@ -59,6 +59,7 @@ def game():
 
     window.blit(background,(0,0))
 
+    jogando = True
     lista = [True] * 9
     i = 0
     while True:
@@ -76,113 +77,132 @@ def game():
                 # Criando o jogador1 na posição x = 10 y = 10
             
                 #pygame.draw.line(window, BLACK,(205,0),(205,600),10)
-                if lista[0] == True and x_mouse < 205 and y_mouse < 205:
-                    x = 0
-                    y = 0
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista [0] = False
+                if jogando == True:
+                    if lista[0] == True and x_mouse < 205 and y_mouse < 205:
+                        x = 0
+                        y = 0
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [0][0] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [0][0] = 'o'
+                        i+=1
+                        lista [0] = False
 
-                if lista[1] == True and  205 < x_mouse < 425 and y_mouse < 205:
-                    x = 215
-                    y = 0
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[1] = False
-                
-                if lista[2] == True and x_mouse > 425 and y_mouse < 205:
-                    x = 426
-                    y = 0
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[2] = False
+                    if lista[1] == True and  205 < x_mouse < 425 and y_mouse < 205:
+                        x = 215
+                        y = 0
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [0][1] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [0][1] = 'o'
+                        i+=1
+                        lista[1] = False
+                    
+                    if lista[2] == True and x_mouse > 425 and y_mouse < 205:
+                        x = 426
+                        y = 0
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [0][2] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [0][2] = 'o'
+                        i+=1
+                        lista[2] = False
 
-                if lista[3] == True and x_mouse < 205 and 425 > y_mouse > 205:
-                    x = 0
-                    y = 216
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[3] = False
-                
-                if lista[4] == True and 205 < x_mouse < 425 and 425 > y_mouse > 205:
-                    x = 216
-                    y = 216
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[4] = False
-                
-                if lista[5] == True and x_mouse > 425 and 425 > y_mouse > 205:
-                    x = 425
-                    y = 216
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[5] = False
-                
-                if lista[6] == True and x_mouse < 205 and y_mouse > 425:
-                    x = 0
-                    y = 425
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[6] = False
-                
-                if lista[7] == True and 205 < x_mouse < 425 and y_mouse > 425:
-                    x = 216
-                    y = 425
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[7] = False
+                    if lista[3] == True and x_mouse < 205 and 425 > y_mouse > 205:
+                        x = 0
+                        y = 216
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [1][0] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [1][0] = 'o'
+                        i+=1
+                        lista[3] = False
+                    
+                    if lista[4] == True and 205 < x_mouse < 425 and 425 > y_mouse > 205:
+                        x = 216
+                        y = 216
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [1][1] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [1][1] = 'o'
+                        i+=1
+                        lista[4] = False
+                    
+                    if lista[5] == True and x_mouse > 425 and 425 > y_mouse > 205:
+                        x = 425
+                        y = 216
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [1][2] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [1][2] = 'o'
+                        i+=1
+                        lista[5] = False
+                    
+                    if lista[6] == True and x_mouse < 205 and y_mouse > 425:
+                        x = 0
+                        y = 425
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [2][0] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [2][0] = 'o'
+                        i+=1
+                        lista[6] = False
+                    
+                    if lista[7] == True and 205 < x_mouse < 425 and y_mouse > 425:
+                        x = 216
+                        y = 425
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [2][1] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [2][1] = 'o'
+                        i+=1
+                        lista[7] = False
 
-                if lista[8] == True and x_mouse > 425 and y_mouse > 425:
-                    x = 425
-                    y = 425
-                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
-                    if i ==0 or i % 2 == 0 :
-                        all_sprites.add(jogador1)
-                    else: 
-                        all_sprites.add(jogador2)
-                    i+=1
-                    lista[8] = False
+                    if lista[8] == True and x_mouse > 425 and y_mouse > 425:
+                        x = 425
+                        y = 425
+                        jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                        jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                        if i ==0 or i % 2 == 0 :
+                            all_sprites.add(jogador1)
+                            board_array [2][2] = 'x'
+                        else: 
+                            all_sprites.add(jogador2)
+                            board_array [2][2] = 'o'
+                        i+=1
+                        lista[8] = False
 
                 
                 
@@ -199,9 +219,12 @@ def game():
         #Jogo
         tabuleiro_jogo(window)
         click_on_off,click_ult_status,click_posicao_x,click_posicao_y = logica_click(click,mouse,click_on_off,click_ult_status,click_posicao_x,click_posicao_y)
-        draw_celula(window,board_array)
+        # draw_celula(window,board_array)
         board_array,X_or_O_turn = board_array_data(board_array,X_or_O_turn, end_game,click_posicao_x,click_posicao_y)
+        all_sprites.draw(window) #desenhando o jogador1
         end_game, X_or_O_turn = win_line(window,board_array,end_game,X_or_O_turn)
+        if end_game == 1:
+            jogando = False 
         restart_button(window)
 
         #Clique último status
@@ -211,6 +234,5 @@ def game():
         else:
             click_ult_status = 0 
 
-        #desenhando o jogador1
-        all_sprites.draw(window)
+        
         pygame.display.update()
