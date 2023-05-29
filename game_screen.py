@@ -58,6 +58,7 @@ def game():
     end_game = 0 
 
     window.blit(background,(0,0))
+    i = 0
     while True:
         # ----- Trata eventos
         for event in pygame.event.get():
@@ -77,8 +78,102 @@ def game():
                     x = 0
                     y = 0
                     jogador1 = Jogador1(assets[CROCO_IMG], x, y)
-                    all_sprites.add(jogador1)
-                    print("clicou")
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+
+                if 205 < x_mouse < 425 and y_mouse < 205:
+                    x = 215
+                    y = 0
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+                
+                if x_mouse > 425 and y_mouse < 205:
+                    x = 426
+                    y = 0
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+
+                if x_mouse < 205 and 425 > y_mouse > 205:
+                    x = 0
+                    y = 216
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+                
+                if 205 < x_mouse < 425 and 425 > y_mouse > 205:
+                    x = 216
+                    y = 216
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+                
+                if x_mouse > 425 and 425 > y_mouse > 205:
+                    x = 425
+                    y = 216
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+                
+                if x_mouse < 205 and y_mouse > 425:
+                    x = 0
+                    y = 425
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+                
+                if 205 < x_mouse < 425 and y_mouse > 425:
+                    x = 216
+                    y = 425
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+
+                if x_mouse > 425 and y_mouse > 425:
+                    x = 425
+                    y = 425
+                    jogador1 = Jogador1(assets[CROCO_IMG], x, y)
+                    jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
+                    if i ==0 or i % 2 == 0 :
+                        all_sprites.add(jogador1)
+                    else: 
+                        all_sprites.add(jogador2)
+                    i+=1
+
+                
                 
         
         #Variável posição do Mouse
