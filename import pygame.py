@@ -45,15 +45,15 @@ BACKGROUND_HEIGHT = 600
 
 assets={}
 assets['background'] = pygame.image.load('assets/img/img/6206152.jpg').convert()
-assets['pessoa_img'] = pygame.transform.scale(assets['6206152.jpg'], (BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
+assets['background'] = pygame.transform.scale(assets['6206152.jpg'], (BACKGROUND_WIDTH, BACKGROUND_HEIGHT))
 assets['crocodilo_img'] = pygame.image.load('assets/img/crocodilo jogo da velha.jpg').convert_alpha()
 assets['crocodilo_img'] = pygame.transform.scale(assets['crocodilo jogo da velha.jpg'], (CROCODILO_WIDTH,CROCODILO_HEIGHT))
 assets['play_inicial_img'] = pygame.image.load('assets/img/play inicial.png').convert_alpha()
 assets['play_inicial_img'] = pygame.transform.scale(assets['play inicial.png'], (PLAY_INICIAL_WIDTH, PLAY_INICIAL_HEIGHT))
 assets['play_inicial_selecionada_img'] = pygame.image.load('assets/img/play inicial mais clara.png').convert_alpha()
 assets['play_inicial_selecionada_img'] = pygame.transform.scale(assets['play inicial mais clara.png'], (PLAY_SELECIONADA_WIDTH , PLAY_SELECIONADA_HEIGHT))
-assets['pessoa_img'] = pygame.image.load('assets/img/imagem pessoa 1.jpeg').convert_alpha()
-assets['pessoa_img'] = pygame.transform.scale(assets['imagem pessoa 1.jpeg'], (PESSOA_WIDTH, PESSOA_HEIGHT))
+assets['pessoa_img'] = pygame.image.load('assets/img/imagem_pessoa1.png').convert_alpha()
+assets['pessoa_img'] = pygame.transform.scale(assets['imagem_pessoa1.png'], (PESSOA_WIDTH, PESSOA_HEIGHT))
 
 
 # Carrega os sons do jogo
