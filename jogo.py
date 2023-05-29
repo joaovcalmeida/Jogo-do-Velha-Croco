@@ -4,7 +4,10 @@ import pygame
 import random
 from config import *
 from init_screen import *
+from game import *
 from game_screen import *
+
+
 
 pygame.init()
 pygame.mixer.init()
@@ -14,11 +17,13 @@ window = pygame.display.set_mode((LARGURA, ALTURA))
 pygame.display.set_caption('Jogo da Velha Croco')
 
 state = INIT
+
+
 while state != QUIT:
     if state == INIT:
         state = init_screen(window)
     elif state == GAME:
-        state = game_screen(window)
+        state = game()
     else:
         state = QUIT
 

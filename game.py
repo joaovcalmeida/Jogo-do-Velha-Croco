@@ -5,7 +5,7 @@ from config import *
 from assets import *
  
 # Initializing Pygame
-pygame.init()
+#pygame.init()
 
 
 
@@ -41,7 +41,7 @@ def tabuleiro_jogo(window):
     pygame.draw.line(window, BLACK,(0,205),(600,205),10)
     pygame.draw.line(window, BLACK,(0,405),(600,405),10)
 
-def logica_click(click_on_off,click_ult_status,x,y):
+def logica_click(click,mouse,click_on_off,click_ult_status,x,y):
     if click[0] == 0 and click_ult_status == 1:
         click_on_off = 1
         x = (math.ceil(mouse[0]/200) - 1)
@@ -123,38 +123,4 @@ def restart_button(window):
 
 
 
-while True:
-    # ----- Trata eventos
-    for event in pygame.event.get():
-        # ----- Verifica consequências
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-    
-    #Variável posição do Mouse
-    mouse = pygame.mouse.get_pos()
-    mouse_position_x = mouse[0]
-    mouse_position_y = mouse[1]
-    
-    
-    #Variável clique do Mouse
-    click = pygame.mouse.get_pressed()
-   
-
-    #Jogo
-    tabuleiro_jogo(window)
-    click_on_off,click_ult_status,click_posicao_x,click_posicao_y = logica_click(click_on_off,click_ult_status,click_posicao_x,click_posicao_y)
-    draw_celula(window,board_array)
-    board_array,X_or_O_turn = board_array_data(board_array,X_or_O_turn, end_game,click_posicao_x,click_posicao_y)
-    end_game, X_or_O_turn = win_line(window,board_array,end_game,X_or_O_turn)
-    restart_button(window)
-
-    #Clique último status
-
-    if click[0] == 1:
-        click_ult_status = 1 
-    else:
-        click_ult_status = 0 
-
-    pygame.display.update()
 

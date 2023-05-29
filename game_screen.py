@@ -1,89 +1,67 @@
 import pygame
+import math
 from config import *
 from assets import *
+from game import *
 
-def game_screen(window):
-    # Variável para o ajuste de velocidade
-    clock = pygame.time.Clock()
 
-    assets = load_assets()
+def game():
+    print("entrou no game screen")
+    window = pygame.display.set_mode((1000, 600))
+    window.fill(WHITE)
 
-    DONE = 0
-    PLAYING = 1
-    state = PLAYING
+
+    board_array = [['n', 'n', 'n'],
+                ['n', 'n', 'n'],
+                ['n', 'n', 'n']]
+
+    #Fontes
+    pygame.font.init()
+    fonte_t1 = pygame.font.SysFont("goudystout", 42)
+    fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
+    fonte_t3 = pygame.font.SysFont("Comic Sans MS", 30)
+
+    #Variavéis Click
+
+    click_ult_status = 0 
+    click_on_off = 0
+    click_posicao_x = -1 
+    click_posicao_y = -1
+    X_or_O_turn = 'x' # X ou O
+    end_game = 0 
 
     
-    # Initializing Color
-    color = (255,255,255)
-    top = 100
-    left = 100
-
-
-    # ===== Loop principal =====
-    while state != DONE:
-        clock.tick(FPS)
-
+    while True:
         # ----- Trata eventos
         for event in pygame.event.get():
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
-                state = DONE
+                return QUIT
+                pygame.quit()
+                quit()
+        
+        #Variável posição do Mouse
+        mouse = pygame.mouse.get_pos()
+        mouse_position_x = mouse[0]
+        mouse_position_y = mouse[1]
+        
+        
+        #Variável clique do Mouse
+        click = pygame.mouse.get_pressed()
+    
+        #Jogo
+        tabuleiro_jogo(window)
+        click_on_off,click_ult_status,click_posicao_x,click_posicao_y = logica_click(click,mouse,click_on_off,click_ult_status,click_posicao_x,click_posicao_y)
+        draw_celula(window,board_array)
+        board_array,X_or_O_turn = board_array_data(board_array,X_or_O_turn, end_game,click_posicao_x,click_posicao_y)
+        end_game, X_or_O_turn = win_line(window,board_array,end_game,X_or_O_turn)
+        restart_button(window)
 
-        # ----- Gera saídas
-        window.fill(WHITE)  # Preenche com a cor branca
+        #Clique último status
 
-        r1 = pygame.draw.rect(window, color, pygame.Rect(left, top, 120, 100))
-        pygame.display.flip()
-        r2 = pygame.draw.rect(window, color, pygame.Rect(300, top, 120, 100))
-        pygame.display.flip()
-        r3 = pygame.draw.rect(window, color, pygame.Rect(500, top, 120, 100))
-        pygame.display.flip()
-        r4 = pygame.draw.rect(window, color, pygame.Rect(left, 300, 120, 100))
-        pygame.display.flip()
-        r5 = pygame.draw.rect(window, color, pygame.Rect(300, 300, 120, 100))
-        pygame.display.flip()
-        r6 = pygame.draw.rect(window, color, pygame.Rect(500, 300, 120, 100))
-        pygame.display.flip()
-        r7 = pygame.draw.rect(window, color, pygame.Rect(left, 500, 120, 100))
-        pygame.display.flip()
-        r8 = pygame.draw.rect(window, color, pygame.Rect(300, 500, 120, 100))
-        pygame.display.flip()
-        r9 = pygame.draw.rect(window, color, pygame.Rect(500, 500, 120, 100))
-        pygame.display.flip()
+        if click[0] == 1:
+            click_ult_status = 1 
+        else:
+            click_ult_status = 0 
 
-
-        e = 0
-        while e < 9:
-            if e == 0 or e%2 == 0:
-                r1 = CROCO_IMG
-                r2 = CROCO_IMG
-                r3= CROCO_IMG
-                r4= CROCO_IMG
-                r5= CROCO_IMG
-                r6= CROCO_IMG
-                r7= CROCO_IMG
-                r8= CROCO_IMG
-                r9= CROCO_IMG
-            else:
-                r1 = PESSOA_IMG
-                r2= PESSOA_IMG
-                r3= PESSOA_IMG
-                r4= PESSOA_IMG
-                r5= PESSOA_IMG
-                r6= PESSOA_IMG
-                r7= PESSOA_IMG
-                r8= PESSOA_IMG
-                r9= PESSOA_IMG
-
-
-        pygame.display.update()  # Mostra o novo frame para o jogador
-
-    return state
-
-window = pygame.display.set_mode((LARGURA,ALTURA))
-state = INIT 
-while state != QUIT:
-    if state == GAME:
-        state = game_screen(window)
-    else:
-        state = QUIT
+        pygame.display.update()
