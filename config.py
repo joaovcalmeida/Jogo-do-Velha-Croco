@@ -23,6 +23,7 @@ RED = (255, 0, 0)
 GREEN = (34, 139, 34)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
+GRAY = (169,169,169)
 
 # Estados para controle do fluxo da aplicação
 INIT = 0

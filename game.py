@@ -7,6 +7,8 @@ from assets import *
 # Initializing Pygame
 pygame.init()
 
+
+
 # Initializing window
 window = pygame.display.set_mode((1000, 600))
 window.fill(WHITE)
@@ -20,6 +22,7 @@ board_array = [['n', 'n', 'n'],
 pygame.font.init()
 fonte_t1 = pygame.font.SysFont("goudystout", 42)
 fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
+fonte_t3 = pygame.font.SysFont("Comic Sans MS", 30)
 
 #Variavéis Click
 
@@ -114,7 +117,9 @@ def win_line(window,board_array,end_game,X_or_O_turn):
     return end_game, X_or_O_turn
     
 def restart_button(window):
-    pygame.draw.rect(window, BLACK, (700,100, 200 , 65))
+    pygame.draw.rect(window, GRAY, (700,100, 200 , 65))
+    texto = fonte_t3.render('Restart', 1, BLACK)
+    window.blit(texto,(745,110))
 
 
 
@@ -134,7 +139,7 @@ while True:
     
     #Variável clique do Mouse
     click = pygame.mouse.get_pressed()
-    print(click)
+   
 
     #Jogo
     tabuleiro_jogo(window)
