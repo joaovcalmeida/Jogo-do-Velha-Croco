@@ -192,6 +192,7 @@ def game():
         board_array,X_or_O_turn = board_array_data(board_array,X_or_O_turn, end_game,click_posicao_x,click_posicao_y)
         end_game, X_or_O_turn = win_line(window,board_array,end_game,X_or_O_turn)
         restart_button(window)
+        restart_game(board_array,click_posicao_x,click_posicao_y,end_game,click_on_off)
 
         #Clique último status
 
