@@ -8,7 +8,7 @@ from assets import *
 pygame.init()
 
 # Initializing window
-window = pygame.display.set_mode((LARGURA, ALTURA))
+window = pygame.display.set_mode((1000, 600))
 window.fill(WHITE)
 
 
@@ -25,18 +25,18 @@ fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
 
 click_ult_status = 0 
 click_on_off = 0
-click_posicao_x = 1 
-click_posicao_y = 1
-O_or_X = 'x' # X ou O
+click_posicao_x = -1 
+click_posicao_y = -1
+X_or_O_turn = 'x' # X ou O
 end_game = 0 
 
 #Função tabuleiro
 
 def tabuleiro_jogo(window):
-    pygame.draw.line(window, BLACK,(170,0),(170,600),10)
-    pygame.draw.line(window, BLACK,(370,0),(370,600),10)
-    pygame.draw.line(window, BLACK,(0,190),(550,190),10)
-    pygame.draw.line(window, BLACK,(0,390),(550,390),10)
+    pygame.draw.line(window, BLACK,(205,0),(205,600),10)
+    pygame.draw.line(window, BLACK,(405,0),(405,600),10)
+    pygame.draw.line(window, BLACK,(0,205),(600,205),10)
+    pygame.draw.line(window, BLACK,(0,405),(600,405),10)
 
 def logica_click(click_on_off,click_ult_status,x,y):
     if click[0] == 0 and click_ult_status == 1:
@@ -61,12 +61,13 @@ def draw_celula(window,board_array):
                 pass
 
 def board_array_data(board_array,X_or_O_turn, end_game,x,y):
-    if X_or_O_turn == 'x' and board_array[y][x] =='n' and x != -1 and y != -1 and end_game == 0:
-        board_array[y][x] == 'x'
-        X_or_O_turn = 'o'
-    if X_or_O_turn == 'o' and board_array[y][x] =='n' and x != -1 and y != -1 and end_game == 0:
-        board_array[y][x] == 'o'
-        X_or_O_turn = 'x'
+    if x<3 and y<3:
+        if X_or_O_turn == 'x' and board_array[y][x] =='n' and x != -1 and y != -1 and end_game == 0:
+            board_array[y][x] == 'x'
+            X_or_O_turn = 'o'
+        if X_or_O_turn == 'o' and board_array[y][x] =='n' and x != -1 and y != -1 and end_game == 0:
+            board_array[y][x] == 'o'
+            X_or_O_turn = 'x'
     return board_array,X_or_O_turn
 
 def win_line(window,board_array,end_game,X_or_O_turn):
@@ -117,14 +118,13 @@ def restart_button(window):
 
 
 
-game = True
-
-while game:
+while True:
     # ----- Trata eventos
     for event in pygame.event.get():
         # ----- Verifica consequências
         if event.type == pygame.QUIT:
-            game = False  
+            pygame.quit()
+            quit()
     
     #Variável posição do Mouse
     mouse = pygame.mouse.get_pos()
