@@ -110,7 +110,7 @@ def game():
                         lista[1] = False
                     
                     if lista[2] == True and x_mouse > 425 and x_mouse < 620 and y_mouse < 205:
-                        x = 405
+                        x = 415
                         y = 0
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -124,7 +124,7 @@ def game():
                         lista[2] = False
 
                     if lista[3] == True and x_mouse < 205 and 425 > y_mouse > 205:
-                        x = 0
+                        x = 5
                         y = 205
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -138,7 +138,7 @@ def game():
                         lista[3] = False
                     
                     if lista[4] == True and 205 < x_mouse < 425 and 425 > y_mouse > 205:
-                        x = 205
+                        x = 210
                         y = 205
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -152,7 +152,7 @@ def game():
                         lista[4] = False
                     
                     if lista[5] == True and x_mouse > 425 and x_mouse<620 and 425 > y_mouse and y_mouse > 205:
-                        x = 405
+                        x = 415
                         y = 205
                         jogador1 = Jogador1(assets[CROCO_IMG], x,y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -166,7 +166,7 @@ def game():
                         lista[5] = False
                     
                     if lista[6] == True and x_mouse < 205 and y_mouse > 425:
-                        x = 0
+                        x = 5
                         y = 405
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -180,7 +180,7 @@ def game():
                         lista[6] = False
                     
                     if lista[7] == True and 205 < x_mouse and x_mouse < 425 and y_mouse > 425:
-                        x = 205
+                        x = 210
                         y = 405
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -194,7 +194,7 @@ def game():
                         lista[7] = False
 
                     if lista[8] == True and x_mouse > 425 and x_mouse <620 and y_mouse > 425:
-                        x = 405
+                        x = 415
                         y = 405
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
