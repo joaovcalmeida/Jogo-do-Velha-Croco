@@ -14,8 +14,8 @@ class Botao(pygame.sprite.Sprite):
         # rect é a representação de retangulo feita pelo pygame
         self.rect = self.image.get_rect()
         # é preciso definir onde a imagem deve aparecer no jogo
-        self.rect.x = 50
-        self.rect.y = 50
+        self.rect.x = 260
+        self.rect.y = 300
 
         self.nome_do_jogo = nome_do_jogo
 

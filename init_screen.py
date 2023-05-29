@@ -21,7 +21,7 @@ def init_screen(window):
     game = True
 
     # ----- Inicia assets
-    fonte_t1 = pygame.font.SysFont("goudystout", 42)
+    fonte_t1 = pygame.font.SysFont("goudystout", 48)
     fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
 
     titulo1 = fonte_t1.render('Jogo da Velha', True, (255, 255, 255))
@@ -56,7 +56,7 @@ def init_screen(window):
 
         # ----- Gera saídas
         window.fill(GREEN)  # Preenche com a cor verde
-        window.blit(titulo1, (100, 110))
+        window.blit(titulo1, (52, 110))
         window.blit(titulo2, (180, 165))
         window.blit(play.image, play.rect)
         all_buttons.draw(window)
