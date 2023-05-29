@@ -30,7 +30,7 @@ def game_screen(window):
                 state = DONE
 
         # ----- Gera saídas
-        window.fill(BACKGROUND)  # Preenche com a cor branca
+        window.fill(WHITE)  # Preenche com a cor branca
 
         r1 = pygame.draw.rect(window, color, pygame.Rect(left, top, 120, 100))
         pygame.display.flip()
