@@ -96,7 +96,7 @@ def game():
                         lista [0] = False
 
                     if lista[1] == True and  205 < x_mouse < 425 and y_mouse < 205:
-                        x = 205
+                        x = 210
                         y = 0
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
