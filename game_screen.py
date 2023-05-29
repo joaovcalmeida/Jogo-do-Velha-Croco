@@ -82,7 +82,7 @@ def game():
                 #pygame.draw.line(window, BLACK,(205,0),(205,600),10)
                 if jogando == True:
                     if lista[0] == True and x_mouse < 205 and y_mouse < 205:
-                        x = 0
+                        x = 5
                         y = 0
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -96,7 +96,7 @@ def game():
                         lista [0] = False
 
                     if lista[1] == True and  205 < x_mouse < 425 and y_mouse < 205:
-                        x = 215
+                        x = 205
                         y = 0
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -110,7 +110,7 @@ def game():
                         lista[1] = False
                     
                     if lista[2] == True and x_mouse > 425 and x_mouse < 620 and y_mouse < 205:
-                        x = 426
+                        x = 405
                         y = 0
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
@@ -125,7 +125,7 @@ def game():
 
                     if lista[3] == True and x_mouse < 205 and 425 > y_mouse > 205:
                         x = 0
-                        y = 216
+                        y = 205
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
                         if i ==0 or i % 2 == 0 :
@@ -138,8 +138,8 @@ def game():
                         lista[3] = False
                     
                     if lista[4] == True and 205 < x_mouse < 425 and 425 > y_mouse > 205:
-                        x = 216
-                        y = 216
+                        x = 205
+                        y = 205
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
                         if i ==0 or i % 2 == 0 :
@@ -152,8 +152,8 @@ def game():
                         lista[4] = False
                     
                     if lista[5] == True and x_mouse > 425 and x_mouse<620 and 425 > y_mouse and y_mouse > 205:
-                        x = 425
-                        y = 216
+                        x = 405
+                        y = 205
                         jogador1 = Jogador1(assets[CROCO_IMG], x,y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
                         if i ==0 or i % 2 == 0 :
@@ -167,7 +167,7 @@ def game():
                     
                     if lista[6] == True and x_mouse < 205 and y_mouse > 425:
                         x = 0
-                        y = 425
+                        y = 405
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
                         if i ==0 or i % 2 == 0 :
@@ -180,8 +180,8 @@ def game():
                         lista[6] = False
                     
                     if lista[7] == True and 205 < x_mouse and x_mouse < 425 and y_mouse > 425:
-                        x = 216
-                        y = 425
+                        x = 205
+                        y = 405
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
                         if i ==0 or i % 2 == 0 :
@@ -194,8 +194,8 @@ def game():
                         lista[7] = False
 
                     if lista[8] == True and x_mouse > 425 and x_mouse <620 and y_mouse > 425:
-                        x = 425
-                        y = 425
+                        x = 405
+                        y = 405
                         jogador1 = Jogador1(assets[CROCO_IMG], x, y)
                         jogador2 = Jogador2(assets[PESSOA_IMG],x,y)
                         if i ==0 or i % 2 == 0 :
