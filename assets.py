@@ -32,7 +32,7 @@ def load_assets():
     assets[CROCO_VENCEU] = pygame.transform.scale(assets[CROCO_VENCEU], (300, 150))
     assets[CROCO_VENCEU] = pygame.transform.rotate(assets[CROCO_VENCEU], 0)
     assets[DJ_VENCEU] = pygame.image.load(os.path.join(IMG_DIR,'dj_novelli_venceu.png')).convert_alpha()
-    assets[DJ_VENCEU] = pygame.transform.scale(assets[DJ_VENCEU], (300, 150))
+    assets[DJ_VENCEU] = pygame.transform.scale(assets[DJ_VENCEU], (380, 150))
     assets[DJ_VENCEU] = pygame.transform.rotate(assets[DJ_VENCEU], 0)
     assets[DEU_VELHA] = pygame.image.load(os.path.join(IMG_DIR,'deu-velha.png')).convert_alpha()
     assets[DEU_VELHA] = pygame.transform.scale(assets[DEU_VELHA], (300, 150))
@@ -42,8 +42,8 @@ def load_assets():
 # Carrega os sons do jogo
     #pygame.mixer.music.load(os.path.join(SND_DIR, ''))
     #pygame.mixer.music.set_volume(0.4)
-    assets[DJ_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'dj_caionoveli-sound.ogg'))
+    assets[DJ_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'vitoria_dj.ogg'))
     assets[RIVER_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'river-sound.ogg'))
     assets[WIN_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'win-sound.ogg'))
-    assets[CROCO_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'crocodile-sound.ogg'))
+    assets[CROCO_SOUND] = pygame.mixer.Sound(os.path.join(SND_DIR, 'crocodilado.ogg'))
     return assets

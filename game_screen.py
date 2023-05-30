@@ -110,6 +110,7 @@ def game():
             
                 #pygame.draw.line(window, BLACK,(205,0),(205,600),10)
                 if jogando == True:
+                    music = True
                     if lista[0] == True and x_mouse < 205 and y_mouse < 205:
                         x = 5
                         y = 0
@@ -260,11 +261,7 @@ def game():
         restart_button(window)
         restart_game(board_array,click_posicao_x,click_posicao_y,end_game,click_on_off)
 
-        fonte_t1 = pygame.font.SysFont("goudystout", 48)
-        fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
-        fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
-        titulo1 = fonte_t1.render('Jogo da Velha', True, (255, 255, 255))
-        titulo2 = fonte_t2.render('Distribuição CrocoRichards', True, (255, 255, 255))
+        
 
         if jogando == False:
             vencedor = verifica_jogo_da_velha(board_array)
@@ -273,15 +270,17 @@ def game():
                  y = 350
                  croco = vencedorx(assets[CROCO_VENCEU],x,y)
                  all_sprites.add(croco)
-                 assets['win_sound'].play()
-                 assets['croco_sound'].play()
+                 if music == True:
+                    assets['croco_sound'].play()
+                    music = False
             else:
-                 x= 650
+                 x= 615
                  y = 350
                  novelli = vencedoro(assets[DJ_VENCEU],x,y)
                  all_sprites.add(novelli)
-                 assets['win_sound'].play()
-                 assets['dj_sound'].play()
+                 if music == True:
+                      assets['dj_sound'].play()
+                      music = False
 
             
 
