@@ -12,6 +12,9 @@ CROCO_SOUND = 'croco_sound'
 DJ_SOUND = 'dj_sound'
 RIVER_SOUND ='river_sound'
 WIN_SOUND = 'win_sound'
+CROCO_VENCEU = 'croco_venceu'
+DJ_VENCEU = 'dj_venceu'
+DEU_VELHA = 'deu_velha'
 
 
 def load_assets():
@@ -25,6 +28,17 @@ def load_assets():
     assets[PLAY_INICIAL_IMG] = pygame.transform.scale(assets[PLAY_INICIAL_IMG], (300, 300))
     assets[PLAY_INICIAL_SELECIONADA_IMG] = pygame.image.load(os.path.join(IMG_DIR,'play_inicial_mais_clara.png')).convert_alpha()
     assets[PLAY_INICIAL_SELECIONADA_IMG] = pygame.transform.scale(assets[PLAY_INICIAL_SELECIONADA_IMG], (300, 300))
+    assets[CROCO_VENCEU] = pygame.image.load(os.path.join(IMG_DIR,'croco_venceu.png')).convert_alpha()
+    assets[CROCO_VENCEU] = pygame.transform.scale(assets[CROCO_VENCEU], (300, 150))
+    assets[CROCO_VENCEU] = pygame.transform.rotate(assets[CROCO_VENCEU], 0)
+    assets[DJ_VENCEU] = pygame.image.load(os.path.join(IMG_DIR,'dj_novelli_venceu.png')).convert_alpha()
+    assets[DJ_VENCEU] = pygame.transform.scale(assets[DJ_VENCEU], (300, 150))
+    assets[DJ_VENCEU] = pygame.transform.rotate(assets[DJ_VENCEU], 0)
+    assets[DEU_VELHA] = pygame.image.load(os.path.join(IMG_DIR,'deu-velha.png')).convert_alpha()
+    assets[DEU_VELHA] = pygame.transform.scale(assets[DEU_VELHA], (300, 150))
+    assets[DEU_VELHA] = pygame.transform.rotate(assets[DEU_VELHA], 0)
+
+
 # Carrega os sons do jogo
     #pygame.mixer.music.load(os.path.join(SND_DIR, ''))
     #pygame.mixer.music.set_volume(0.4)

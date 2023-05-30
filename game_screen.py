@@ -24,6 +24,35 @@ class Jogador2(pygame.sprite.Sprite):
        self.rect.x = x
        self.rect.y = y
 
+class vencedorx(pygame.sprite.Sprite):
+   def __init__(self, img, x, y):
+       # Construtor da classe mãe (Sprite).
+       pygame.sprite.Sprite.__init__(self)
+
+       self.image = img
+       self.rect = self.image.get_rect()
+       self.rect.x = x
+       self.rect.y = y
+
+class vencedoro(pygame.sprite.Sprite):
+   def __init__(self, img, x, y):
+       # Construtor da classe mãe (Sprite).
+       pygame.sprite.Sprite.__init__(self)
+
+       self.image = img
+       self.rect = self.image.get_rect()
+       self.rect.x = x
+       self.rect.y = y
+
+class Velha(pygame.sprite.Sprite):
+   def __init__(self, img, x, y):
+       # Construtor da classe mãe (Sprite).
+       pygame.sprite.Sprite.__init__(self)
+
+       self.image = img
+       self.rect = self.image.get_rect()
+       self.rect.x = x
+       self.rect.y = y
 
 def game():
     print("entrou no game screen")
@@ -231,12 +260,36 @@ def game():
         restart_button(window)
         restart_game(board_array,click_posicao_x,click_posicao_y,end_game,click_on_off)
 
+        fonte_t1 = pygame.font.SysFont("goudystout", 48)
+        fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
+        fonte_t2 = pygame.font.SysFont("lucidacalligraphy", 30)
+        titulo1 = fonte_t1.render('Jogo da Velha', True, (255, 255, 255))
+        titulo2 = fonte_t2.render('Distribuição CrocoRichards', True, (255, 255, 255))
+
         if jogando == False:
             vencedor = verifica_jogo_da_velha(board_array)
-            print(vencedor)
+            if vencedor == 'Croco Venceu':
+                 x= 650
+                 y = 350
+                 croco = vencedorx(assets[CROCO_VENCEU],x,y)
+                 all_sprites.add(croco)
+                 assets['win_sound'].play()
+                 assets['croco_sound'].play()
+            else:
+                 x= 650
+                 y = 350
+                 novelli = vencedoro(assets[DJ_VENCEU],x,y)
+                 all_sprites.add(novelli)
+                 assets['win_sound'].play()
+                 assets['dj_sound'].play()
+
+            
 
         elif lista == [False] * 9:
-             print('empate')
+            x= 650
+            y = 350
+            velha = Velha(assets[DEU_VELHA],x,y)
+            all_sprites.add(velha)
 
         #Clique último status
 
